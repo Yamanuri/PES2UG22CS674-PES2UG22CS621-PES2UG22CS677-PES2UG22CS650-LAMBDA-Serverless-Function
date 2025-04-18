@@ -1,0 +1,21 @@
+# Use the official Python image
+FROM python:3.10
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file first
+COPY requirements.txt /app/
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code (including main.py)
+COPY . /app/
+
+# Expose the port (if needed for web apps)
+EXPOSE 5000
+
+# Command to run your Python application (use main.py instead of app.py)
+CMD ["python", "main.py"]
+
