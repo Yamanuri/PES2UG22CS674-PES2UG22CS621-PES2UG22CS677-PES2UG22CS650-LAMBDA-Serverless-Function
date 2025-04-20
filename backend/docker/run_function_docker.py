@@ -6,6 +6,7 @@ import sqlite3
 from typing import Dict, Tuple
 
 # SQLite connection for metrics (passed from main.py to ensure single connection)
+
 def initialize_database(conn: sqlite3.Connection):
     """Initialize the metrics table and ensure all required columns exist."""
     required_columns = {
